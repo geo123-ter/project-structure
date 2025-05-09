@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff3f3;
+    font-family: cursive;
+
+}
+.header{
+ display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        /* background-color: #b79999; */
+        /* border-radius: 10px; */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav{
+    display: flex;
+    gap: 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li {
+    display: flex;
+    margin-right: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+    padding: 10px 20px;
+}
+nav a:hover{
+    color: blue;
+}
+nav a.active{
+    color: blue;
+    font-weight: bold;
+}
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #e4dfdf;
+    border-radius: 10px;
+    box-shadow: 4px 9px 8px rgba(0, 0, 0, 0.1);
+}
+section form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+
+}
+
+section form input[type="text"],
+section form input[type="email"]{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 40%;
+}
+section form textarea #message{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 40%;
+    height: 100px;
+   
+}
+section form input::placeholder,textarea::placeholder{
+    color: #000000;
+    font-family: cursive;
+}
+section form .btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: cursive;
+}
+section form .btn:hover {
+    background-color: #0056b3;
+    font-family:cursive;
+}
+section form .btn:active {
+    background-color: #004080;
+}
+p{
+}
