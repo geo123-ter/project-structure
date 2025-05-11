@@ -5,33 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contact</title>
     <link rel="stylesheet" href="contact.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="logo">
+                <img src="../assets/logo.png" alt="Logo" width="150" height="150"  style="margin-left: 40px;">
+            </div>
             <nav>
                 <ul>
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="more.html">About Us</a></li>
+                    <li><a href="./pages/more.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Portiforial</a></li>
-                    <li><a href="blog.html">Blogs</a></li>
+                    <li><a href="port.html">Portiforial</a></li>
+                    <li><a href="./blogs/blogs.html">Blogs</a></li>
                 </ul>
             </nav>
         </div>
-        <section>
-            <!-- <h1>Contact Us</h1> -->
-            <form action="submit_form.php" method="POST">
-                
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <div class="container2">
+            <div class="form-input">
+                <input type="text" placeholder="Name" required>
+                <i class='bx bx-user'></i>
+                </div>  
+               <div class="form-input">
+                <input type="email" placeholder="Email" required>
+                <i class='bx bx-envelope'></i>
+                </div>
+                <div class="form-input">
+                <input type="tel" placeholder="phone number" required>
+                <i class='bx bxs-phone'></i>
+                </div>
+                <div class="form-input">
+                <textarea placeholder="Message" required></textarea>
+                </div>
+                <button type="submit"><a href="last.html"> Send <i class='bx bxs-send'></i></a></button>
 
-                <input type="email" id="email" name="email"  placeholder="Enter your email" required>
-                <textarea id="message" name="message" required>message</textarea>
-                <button type="submit" class="btn">Submit</button>
-            </form>
-            <a href="home.html" class="bnt">GO BACK</a>
-        </section>
-        <div class="footer">
+            </div>
+        </div>
+               <div class="footer">
             <div class="footer-container">
                 <div class="footer-cont">
                <p class="try"> follow us on our social media </p>
@@ -49,20 +62,45 @@
                 <p><i class='bx bx-current-location'></i>12 Nr 45 Karuruma</p>
                 <p><i class='bx bxs-envelope'></i>Mail:Geovanipacis@gmail.com</p>
             </div>
-            <div class="contact">
+            <div class="contact2">
                 <h2>Service</h2>
                 <p><i class='bx bxl-sketch'></i></i>Web Development</p>
                 <p><i class='bx bxs-palette'></i></i>Web Design</p>
-                <p><i class='bx bxs-phone'></i>Mobile Development</p>
-                <p><i class='bx bxl-microsoft'></i></i>Software Development</p>
-            </div>
+           </div>
             
             
              </div>
             
             
             </div>
-            <p>&copy; 2025 Your Company. All rights reserved.</p>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const formInputs = document.querySelectorAll(".form-input input, .form-input textarea");
+            const submitButton = document.querySelector("button[type='submit']");
+
+            submitButton.addEventListener("click", function (event) {
+                let isValid = true;
+
+                formInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.border = "4px solid red";
+                    } else if (input.type === "email" && !/\S+@\S+\.\S+/.test(input.value)) {
+                    } else {
+                        input.style.border = "1px solid #ccc";
+                    }
+                });
+
+                if (!isValid) {
+                    event.preventDefault();
+                    alert("Please fill out all fields before submitting.");
+                }
+                if (isValid) {
+                    alert("Your message has been sent successfully!");
+                }
+            });
+        });
+    </script>
 </body>
 </html>

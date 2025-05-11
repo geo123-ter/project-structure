@@ -19,8 +19,6 @@ body {
     background-color: #6b6ded;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 2px;
 }
 .header img{
     width: 170px;
@@ -34,13 +32,13 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(246, 246, 246);
+   
     }
     nav ul {
         display: flex;
         list-style: none;
         justify-items: space-between;
-        margin-top: -200px;
+        margin-top: -100px;
        
     }
     nav ul li {
@@ -55,10 +53,12 @@ nav{
         color: #0a0a0a;
         font-size: 20px;
     } 
-    nav ul li a.active {
-        color: blue;
-        text-decoration: underline;
-    }  
+nav ul li a.active {
+    color: white;
+    background-color: blue;
+    text-decoration: underline;
+    border-radius: 5px;
+}
     nav ul li a:hover {
         color:blue;
         text-decoration: overline;       
@@ -140,19 +140,7 @@ nav{
         background-color: #0a0a0a;
         color: white;
     }
-    .imag{
-         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 120px;
-        /* margin-right: -300px; */
-    }
-    .imag img{
-      width: 200px;
-        height: auto;
-        margin-left: 300px;
-       
-    }
+   
     /* main style */
    .container{
       display: flex;
@@ -162,6 +150,23 @@ nav{
         margin-left: 100px;
         margin-right: -100px;
    }
+   .imag{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 120px;
+  
+}
+.imag img{
+ width: 200px;
+   height: auto;
+   margin-left: 300px;
+  
+}
+.imag img:hover {
+   transform: scale(1.05);
+   transition: transform 0.3s ease;
+}
 
          .btn {
         margin-top: 20px;
@@ -190,7 +195,7 @@ nav{
           display: inline;
           margin-top: 20px;
           padding: 10px ;
-          /* background-color: blue; */
+         
           color: rgb(0, 0, 0);
           text-decoration: none;
           border-radius: 5px;
@@ -218,7 +223,7 @@ nav{
      }
      .footer-cont{
         width: 100%;
-        /* height: auto; */
+    
         display: flex;
         justify-content: center;
         align-items: center;

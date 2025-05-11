@@ -1,12 +1,14 @@
-// script.js
-const uploadBtn = document.getElementById('uploadBtn');
-const fileInput = document.getElementById('fileInput');
-const fileName = document.getElementById('fileName');
+document.querySelector('.subscribe button').addEventListener('click', function () {
+    const emailInput = document.querySelector('.subscribe input[type="email"]');
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-uploadBtn.addEventListener('click', () => {
-    fileInput.click();
-});
-
-fileInput.addEventListener('change', () => {
-    fileName.textContent = fileInput.files[0]?.name || 'No file chosen';
+    if (!email) {
+        alert('Please enter your email address.');
+    } else if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+    } else {
+        alert('Thank you for subscribing!');
+        emailInput.value = ''; // Clear the input field
+    }
 });

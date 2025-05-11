@@ -1,0 +1,71 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:cursive;
+    background-color: #f4f4f4;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+.preview {
+   width: 90vw;
+   height: 400px;
+    max-width: 600px;
+   position: relative;
+
+   /* as default it wont be displayed */
+   display: none;
+}
+.preview img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* remove input type since we want to create a custom one */
+input[type="file"] {
+   display: none;
+}
+
+label {
+   background-color: blue;
+    color: white;
+     padding: 1em 2.5em;
+    border-radius: .5rem;
+    font-size:1.3rem ;
+    cursor: pointer;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+label:hover {
+   background-color: #0056b3;
+}
+label:active {
+   background-color: #004494;
+   transform:  translateX(-50%) scale(.95);
+}
+p{
+    font-size: 1.2rem;
+     margin-top: 1rem;
+     text-align: center;
+}
+.file_name{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #0d18e8;
+}
+.submitBtn{
+   
+}

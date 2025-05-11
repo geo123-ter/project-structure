@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -139,6 +140,31 @@ nav ul li a:hover {
     margin-top: 20px;
     gap: 10px;  
     
+}
+.upload {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 20px;
+    gap: 10px;
+}
+.upload  a {
+    text-decoration: none;
+    color: rgb(6, 30, 240);
+    font-size: 20px;
+    transition: color 0.3s ease all;
+    margin-top: 20px;
+    gap: 10px;  
+}
+.upload  a:hover {
+    color: #007bff;
+}
+.upload i {
+    font-size: 24px;
+    color: rgb(6, 30, 240);
+    transition: color 0.3s ease all;
+}
+.upload i:hover {
+    color: #007bff;
 }
 
 @media (max-width: 768px) {

@@ -3,38 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>upload</title>
-    <link rel="stylesheet" href="upload.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <title>Upload</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-     <div class="wrapper">
-        <div class="box">
-            <div class="input-bx">
-                <h2 class="upload-area-title">Upload File</h2>
-                <form action="">
-                    <input type="file" id="upload" class="upload-area" accept=".jpg, .jpeg, .png, .pdf, .docx, .txt" hidden>   
-                    <label for="upload" class="uploadlabel">
-                        <span><i class='bx bxs-cloud-upload'></i></span>
-                        <p>Click to upload</p>
-                    </label>
-                </form>
-            </div>
-            <div id="filewrapper">
-                <h3 class="uploaded">uploaded Documents</h3>
-                <div class="showfilebox">
-                    <div class="left">
-                        <span class="filetype">Pdf</span>
-                        <h3>GRJE web.Pdf</h3>
-                    </div>
-                    <div class="right">
-                        <span>&#215</span>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <p>File Name <span class="file_name">No file chosen ,yet !!</span></p>
+        <div class="preview">
+            <!-- as default img won't have a source -->
+            <img src="" alt="">
         </div>
-     </div>
-     <script src="app.js"></script>
+        <input type="file" id="UploadBtn" >
+        <label for="UploadBtn">Upload File</label>
+        <button id="submitBtn">Submit</button>
+    </div>
 </body>
 </html>
