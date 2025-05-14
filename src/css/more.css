@@ -68,6 +68,7 @@ a{
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+  /* footer css */
   .footer-container {
       display: flex;
       justify-content: space-between;

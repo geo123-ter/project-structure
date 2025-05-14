@@ -4,60 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="/src/css/sign.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-        <div class="form">
-            <div class="text-center">
-                <h5><span> Login In </span> <span>Sign Up</span></h5>
-                <input type="checkbox" class="checkbox" id="reg-log">
-                <label for="reg-log"></label>
-                <div class="card-3d-wrap">
-                    <div class="card-3d-wrapper">
-                        <!-- card front -->
-                        <div class="card-front">
-                            <div class="center-wrap">
-                                <h4 class="heading">Log In</h4>
-                                <div class="form-group">        
-                                <input type="email" class="form-style" placeholder=" User Email" required>
-                               <i class='bx bx-envelope'></i>
-                            </div>
-                             <div class="form-group">
-                                <input type="password" class="form-style" placeholder=" User Password" required>
-                                <i class='bx bxs-lock'></i>
-                            </div>
-                              <p class="text-center"><a href="#" class="link">Forgot Password</a></p>
+ <div class="form">
+<div class="text-center">
+<h5><span> Login In </span> <span>Sign Up</span></h5>
+<input type="checkbox" class="checkbox" id="reg-log">
+<label for="reg-log"></label>
+<div class="card-3d-wrap">
+<div class="card-3d-wrapper">
+<div class="card-front">
+<div class="center-wrap">
+<h4 class="heading">Log In</h4>
+ <div class="form-group">        
+<input type="email" class="form-style" placeholder=" User Email" required>
+<i class='bx bx-envelope'></i>
+</div>
+<div class="form-group">
+<input type="password" class="form-style" placeholder=" User Password" required>
+<i class='bx bxs-lock'></i>
+</div>
+<p class="text-center"><a href="#" class="link">Forgot Password</a></p>
 
-                           <a href="/project-structure/upload/upload.html" class="btn">Login</a>
-                    </div>
-                </div>
-                <!-- card back -->
-                   <div class="card-back">
-                            <div class="center-wrap">
-                                <h4 class="heading">Sign Up</h4>
-
-                                 <div class="form-group">        
-                                <input type="text" class="form-style" placeholder=" first name" required>
-                             
-                            </div>
-                                <div class="form-group">        
-                                <input type="text" class="form-style" placeholder=" User Email" required>
-                            
-                            </div>
-                             <div class="form-group">
-                                <input type="password" class="form-style" placeholder=" Enter Password" required>
-                              
-                             </div>
-                             <div class="form-group">
-                                <input type="password" class="form-style" placeholder=" Comfrim password" required>
-                              
-                             </div>
-
-                           <a href="/project-structure/upload/upload.html" class="btn">Sign Up</a>
-                    </div>
-                </div>
-            </div>
+<a href="/upload/upload.html" class="btn">Login</a>
+<p class="text-center"><a href="./" class="link">i dont have account ?</a></p>
+</div>
+</div>
+   
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -79,11 +54,11 @@
                 });
 
                 // Sign-up validation
-                signUpForm.querySelector('.btn').addEventListener('click', (e) => {
+                signUpForm.querySelector('.bt').addEventListener('click', (e) => {
                     const firstName = signUpForm.querySelector('input[placeholder=" first name"]').value;
                     const email = signUpForm.querySelector('input[placeholder=" User Email"]').value;
                     const password = signUpForm.querySelector('input[placeholder=" Enter Password"]').value;
-                    const confirmPassword = signUpForm.querySelector('input[placeholder=" Comfrim password"]').value;
+                    const confirmPassword = signUpForm.querySelector('input[placeholder=" Confirm password"]').value;
 
                     if (!firstName || !email || !password || !confirmPassword) {
                         e.preventDefault();
@@ -102,7 +77,7 @@
                     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     return re.test(email);
                 }
-            });
-        </script>
+});
+</script>
 </body>
 </html>

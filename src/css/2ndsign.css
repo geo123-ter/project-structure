@@ -1,0 +1,146 @@
+ /* @import url(/src/home.css); */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    background: #f0f0f0;
+     display: flex;
+    min-height: 100vh;    
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: 40px;
+
+   
+}
+/* navigation css */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 490px;
+   
+    }
+    nav ul {
+        display: flex;
+        list-style: none;
+        justify-items: space-between;
+        margin-top: 20px;
+        margin-left: -300px;
+       
+    }
+    nav ul li {
+        margin: 0 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #0a0a0a;
+        font-size: 20px;
+    } 
+     nav ul li a:hover {
+        color:blue;
+        text-decoration: overline;       
+    }
+ img{
+    width: 170px;
+   margin-top: -500px;
+    margin-left: -1200px;
+    
+
+} 
+.header{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-radius: 2px;
+        position: sticky;
+        top: 2px; 
+        margin-top: -700px;
+        z-index: 1;
+        
+    }
+    /* form css */
+.container{
+    
+    width: 40%;
+    background-color: rgba(230, 228, 230, 0.4);
+    padding: 20px;
+    box-shadow:  0 0 20px rgba(0, 0, 0, 0.4);
+    margin-top: 200px;
+    margin-left: -600px;
+    /* align-items: center; */
+    margin-right: -900px;
+}
+
+.center-wrap{
+     position: relative;
+        width: 100%;
+        padding: 0 35px;
+        top: 0;
+        left: 0;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #1805eb;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+
+    
+}
+.form-group input {
+    width: 100%;
+    padding: 10px 10px ;
+    border-bottom: 1px solid #0909cf;
+    background: transparent;
+    color: #2a08ea;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    font-family: cursive;
+    border-bottom: 1px  solid black;
+}
+.form-group input::placeholder {
+    color: #0909cf;
+    font-size: 16px;
+}
+.form-group input:focus::placeholder {
+     color: rgb(51, 0, 255);
+     transform: translateY(-50%);
+}
+
+.bt {
+    width: 100%;
+    padding: 10px 0;
+    background: #0909cf;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.bt a {
+    text-decoration: none;
+    color:#f0f0f0;
+}
+.bt a:hover {
+    color: #fff;
+}
+
+     
+      
+

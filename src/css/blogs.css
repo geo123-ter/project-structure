@@ -166,6 +166,26 @@ nav ul li a:hover {
 .upload i:hover {
     color: #007bff;
 }
+#displayImage{
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+#displayImage:hover{
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+#deleteImage{
+    width: 150px;
+    height: auto;
+    background: rgb(181, 65, 65);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
 
 @media (max-width: 768px) {
     .header {

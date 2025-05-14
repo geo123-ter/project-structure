@@ -14,9 +14,43 @@
             <!-- as default img won't have a source -->
             <img src="" alt="">
         </div>
-        <input type="file" id="UploadBtn" >
-        <label for="UploadBtn">Upload File</label>
-        <button id="submitBtn">Submit</button>
+
+        <h3>Select a File to Upload:</h3><br><br><br>
+  <label for="fileInput">Choose a file:</label><br><br><br>
+  <input type="file" id="fileInput" accept="image/*,pdf/*,document/*" title="Select an image file to upload">
+  <br><br>
+  <button class="upload-btn" onclick="uploadFile()">Upload File</button><br><br><br>
+
+  <div id="preview"></div>
+  
     </div>
-</body>
+   
+    <script>
+    function uploadFile() {
+      const fileInput = document.getElementById("fileInput");
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert("Please select a file first!");
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        // Save image data to local storage
+        localStorage.setItem("uploadedImage", event.target.result);
+        // Redirect to blog page
+        window.location.href = "/src/blogs/blogs.html"; 
+      };
+
+      reader.readAsDataURL(file);
+
+      console.log("File uploaded:", file);
+      const preview = document.getElementById("preview");
+      
+    }
+  </script>
+
+</body>-
 </html>
