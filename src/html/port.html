@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portifoliol</title>
+     <title>portifoliol</title>
     <link rel="stylesheet" href="/src/css/port.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<body>
 <img src="/assets/logo.png" alt="logo">
 <div class="header">
     <div class="image">
@@ -15,11 +15,11 @@
     </div>
     <nav>
         <ul>
-            <li><a href="/src/html/home.html">Home</a></li>
-            <li><a href="/src/pages/more.html">About Us</a></li>
-            <li><a href="/src/html/contact.html">Contact</a></li>
-            <li><a href="/src/html/port.html">portifoliol</a></li>
-            <li><a href="/src/blogs/blogs.html">blogs</a></li>
+            <li><a href="/project-structure/src/html/home.html">Home</a></li>
+            <li><a href="/project-structure/src/pages/more.html">About Us</a></li>
+            <li><a href="/project-structure/src/html/contact.html">Contact</a></li>
+            <li><a href="/project-structure/src/html/port.html">portifoliol</a></li>
+            <li><a href="/project-structure/src/blogs/blogs.html">blogs</a></li>
         </ul>
 
     </nav>
@@ -29,10 +29,16 @@
     <div class="content1">
         <h1>Coming Soon</h1>
         <p>We are working hard to bring you something amazing. Stay tuned!</p>
-        <div class="subscribe">
-            <input type="email" placeholder="Enter your email" required/>
+        <p>In the meantime, feel free to explore our other pages.</p>
+        <p>We appreciate your patience and support.</p>
+        <form >    
+              <div class="subscribe">
+        
+            <input type="email" id="email"  name="email:"  placeholder="Enter your email" required/>
             <button type="submit" class="btn">Notify Me</button>
         </div>
+        </form>
+  
     </div>
 </div>
 <div class="footer-container">
@@ -65,7 +71,65 @@
 
 
 </div>
-<script src="script.js"></script>
-</body>
 
+</body>
+   <script>
+        const form = document.querySelector('form');
+        const emailInput = document.getElementById('email');
+        const submitButton = document.querySelector('button[type="submit"]');
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = emailInput.value;
+
+            const newUser = { id: users.length + 1, email };
+
+            users.push(newUser);
+
+            localStorage.setItem('users', JSON.stringify(users));
+
+            console.log('User added:', newUser);
+            console.log('All users:', users);
+        });
+//     const form = document.querySelector('form');
+//     form.addEventListener('submit',(e) => {
+//         e.preventDefault();
+        
+//        const formData = new FormData(form);
+
+//        const res = Object.fromEntries(formData);
+//       const playload = JSON.stringify(res);
+//  formData.forEach((value, key) => {
+//     console.log(key, value);
+//   });
+
+//   for (item of formData){
+//     console.log(item[0], item[1]);
+//   }
+
+//   fetch('https://httpbin.org/post', {
+//     method: 'POST',
+//     body: formData,
+//   })
+
+//   .then(res => res.json())
+//   .then(res => console.log(res))
+//   .then(data => {
+//     const email = formData.get('email:');
+
+//     localStorage.setItem('email:', JSON.stringify(email));
+//     alert('Email saved successfully!');
+//   })
+//   .catch(error => {
+//     alert('There was an error submitting your email.');
+//     console.error(error);
+//   });
+        
+//     })
+    
+   </script>
+
+</body>
 </html>

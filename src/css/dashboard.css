@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: cursive;
+    background-color: #8da9db;
+
+
+}
+.container {
+    display: flex;
+}
+nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    background: #fff;
+    width: 280px;
+    overflow: hidden;
+    box-shadow: 0  20px 20px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+nav img {
+    width: 80%;
+    height: 20%;
+    margin-left: 15px;
+}
+nav ul {
+    margin-top: 20px;
+}
+nav ul li {
+    margin: 30px 0;
+}
+nav
+a{
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    display: tale;
+    width: 280px;
+    padding: 10px 20px;
+    text-decoration: none;   
+
+}
+a i {
+    position: relative;
+    color: blue;
+    font-size: 20px;
+    margin-right: 10px;
+}
+a:hover {
+      transition: 0.3s;
+    text-decoration: overline;
+}
+
+.logout{
+    margin-top: 200px;
+    bottom: 0;
+}
+
+/* main section*/
+
+.main{
+    position: relative;
+    padding: 20px;
+   width:100%;
+
+}
+.main-top {
+    display: flex;
+    width: 100%;
+}
+.main-top i {
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: rgb(11,109,109);
+    cursor: pointer;
+
+}
+.main-skills{
+ display: flex;
+ margin-top: 20px;
+
+}
+.main-skills .card {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    margin-right: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.main-skills .card h3 {
+    color: rgb(59, 5, 235);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.main-skills i {
+    color: rgb(59, 5, 235);
+    font-size: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+    <h1>Let check is true</h1>
+    <div id="data"></div>
+    <div>
+        <button id="btn">confrim</button>
+    </div>
+    </main>
+   
+    <script>
+        const json = localStorage.getItem('input[type="email"');
+        const data = JSON.parse(json);
+
+        for (key in obj){
+          const markup = `
+            <div class="card">
+                <h2>${key}</h2>
+                <p>${obj[key]}</p>
+            </div>
+          `;
+        }
+    </script>
+</body>
+</html>

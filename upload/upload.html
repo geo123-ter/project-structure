@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <p>File Name <span class="file_name">No file chosen ,yet !!</span></p>
         <div class="preview">
-            <!-- as default img won't have a source -->
             <img src="" alt="">
         </div>
 
@@ -38,12 +37,10 @@
       const reader = new FileReader();
 
       reader.onload = function(event) {
-        // Save image data to local storage
+      
         localStorage.setItem("uploadedImage", event.target.result);
-        // Redirect to blog page
-        window.location.href = "/src/blogs/blogs.html"; 
+        window.location.href = "/"; 
       };
-
       reader.readAsDataURL(file);
 
       console.log("File uploaded:", file);

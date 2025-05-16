@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heloo</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        input {
+            width: 100%;
+            margin: 5px 0;
+            padding: 20px 10px;
+            border: 1px solid #2b00ff;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <form >
+       <input type="text" id="name" name="name" placeholder="Enter your name" required>
+         <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="text" id="role" name="role" placeholder="Enter your role" required>
+        <input type="text" id="password" name="password" placeholder="Enter your password" required>
+        <input type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+        <input type="file" id="file" name="file" accept="image/*" required>
+        
+        
+
+            <button type="submit">submit</button>
+    </form>
+    
+    <script>
+        const form = document.querySelector('form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const phoneInput = document.getElementById('phone');
+        const addressInput = document.getElementById('address');
+        const fileInput = document.getElementById('file');
+        const submitButton = document.querySelector('button[type="submit"]');
+
+        const roleInput = document.getElementById('role');
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const role = roleInput.value;
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            const phone = phoneInput.value;
+            const address = addressInput.value;
+            const file = fileInput.files[0];
+
+            const newUser = { id: users.length + 1, name, email, role };
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            console.log('User added:', newUser);
+            console.log('All users:', users);
+        });
+// const users=[{id:1, name:'rash Dev', email:'rash@gmail.com',role:'trainee'},
+//     {id:2, name:'Irasubiza Esther', email:'ira@gmail.com'},
+//     {id:3, name:'Geo Dev', email:'geova@gmail.com',role:'trainee'},
+
+// ]
+// localStorage.setItem('users', JSON.stringify(users));
+// let storedUsers = JSON.parse(localStorage.getItem('users'));
+// console.log(storedUsers);
+
+// for (let i=0;  i < users.length; i++){
+//     console.log(storedUsers[i].role);
+//     if (storedUsers[i].role === 'trainee'){
+//         console.log('this is a trainee');
+//     }
+
+// }
+ </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+ body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      /* padding: 40px; */
+      background-color: #f2f2f2;
+      justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+
+        padding: 0 20px;
+        
+        flex-direction:row;
+
+    }
+
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);           
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      justify-content: space-between;
+    }
+
+    .left, .right {
+      padding: 0px;
+    }
+
+    .left {
+      width: 40%;
+      text-align: center;
+    }
+
+    .left img {
+      width: 150px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .left h3 {
+      text-decoration: underline;
+      margin-top: 15px;
+    }
+
+    .left ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .left ul li {
+      margin: 6px 0;
+    }
+
+    .right {
+      width: 60%;
+    }
+
+    .right h2 {
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      margin: 5px 0;
+    }
+
+    .skills {
+      margin-top: 20px;
+    }
+
+    .skills p {
+      margin: 5px 0;
+    }
+
+    .skills strong {
+      text-transform: uppercase;
+    }
+    /*pac*/
+    
+
+    .container {
+      display: flex;
+      background: #ded8d8;
+      padding: 20px;
+      /* margin-left: 900px; */
+      margin-top: 100px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+    }
+
+    .left, .right {
+      padding: 20px;
+    }
+
+    .left {
+      width: 40%;
+      text-align: center;
+    }
+
+    .left img {
+      width: 150px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .left h3 {
+      text-decoration: underline;
+      margin-top: 15px;
+    }
+
+    .left ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .left ul li {
+      margin: 6px 0;
+    }
+
+    .right {
+      width: 60%;
+    }
+
+    .right h2 {
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      margin: 5px 0;
+    }
+
+    .skills {
+      margin-top: 20px;
+    }
+
+    .skills p {
+      margin: 5px 0;
+    }
+
+    .skills strong {
+      text-transform: uppercase;
+    }
+    .repo{
+       display: grid;
+      grid-template-columns: repeat(1, 3fr);           
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      justify-content: space-between;
+    }
+    .rep{
+
+      
+       display: grid;
+      grid-template-columns: repeat(1, 2fr);           
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      justify-content: space-between;
+    }
