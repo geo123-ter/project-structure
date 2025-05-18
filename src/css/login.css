@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 26, 255);
+}
+a:hover{
+    color: rgb(0, 0, 255);
+    text-decoration: underline;
+}
+body{
+    background: #f8f8f8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* wrapper */
+.wrapper{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    padding: 120px 32px 32px 32px;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* form header*/
+.form-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+      display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 140px;
+   height: 70px;
+   background: #000f;
+    border-radius:  0 0 20px 20px;
+}
+.form-header::before, .form-header::after{
+   content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    box-shadow: 15px 0 0 #000f;
+}
+.form-header::before{
+   left: -30px;
+   border-top-right-radius: 50%;
+   box-shadow: 15px 0 0 #000f;
+}
+.form-header::after{
+   right: -30px;
+   border-top-left-radius: 50%;
+   box-shadow: -15px 0 0 #000f;
+}
+
+/* titles */
+
+.title{
+   position: relative;
+}
+.title-login, .title-register{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+}
+.title-register {
+    top: 50px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+/* forms */
+.login-form, .register-form{
+   
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    transition: all 0.3s ease-in-out;
+}
+.register-form {
+    left: 150%;
+    margin-top: -10px;
+    opacity: 0;
+
+}
+/* input field */
+.input-box {
+position: relative;
+display: flex;
+flex-direction: column;
+margin: 20px 0;
+}
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+.input-box input:focus {
+    border-bottom: 2px solid blue;
+}
+.input-box input::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 17px;
+    color: #0703ff;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+.input-box i{
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    color: #0703ff;
+    font-size: 20px;
+}
+/* forgot password */
+.form-cols{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col-1{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* button */
+.input-bo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.input-bo button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0703ff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.input-bo button:hover{
+    background: #0505a0;
+}
+/* switch form */
+
+.switch-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.switch-form a{
+    color: #0703ff;
+}
+.switch-form a:hover{
+    color: #0505a0;
+}
+
+/* responsive style */
+@media (max-width: 768px) {
+    .wrapper{
+        padding: 80px 16px 16px 16px;
+        height: auto;
+    }
+    .form-header{
+        width: 100%;
+        height: 50px;
+    }
+    .form-header::before, .form-header::after{
+        width: 20px;
+        height: 20px;
+    }
+    .title-login{
+        font-size: 20px;
+    }
+    .login-form{
+        width: 90%;
+    }
+}
+@media (max-width: 480px) {
+    .wrapper{
+        padding: 60px 16px 16px 16px;
+        height: auto;
+    }
+    .form-header{
+        width: 100%;
+        height: 40px;
+    }
+    .form-header::before, .form-header::after{
+        width: 15px;
+        height: 15px;
+    }
+    .title-login{
+        font-size: 18px;
+    }
+    .login-form{
+        width: 95%;
+    }
+}

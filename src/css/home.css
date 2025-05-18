@@ -16,8 +16,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #6b6ded;
-    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .header img{
@@ -38,7 +36,9 @@ nav{
         display: flex;
         list-style: none;
         justify-items: space-between;
-        margin-top: -200px;
+        margin-top: -100px;
+        position: sticky;
+        top: 1px; 
        
     }
     nav ul li {
@@ -55,7 +55,7 @@ nav{
     } 
 nav ul li a.active {
     color: white;
-    background-color: blue;
+   
     text-decoration: underline;
     border-radius: 5px;
 }
@@ -63,17 +63,67 @@ nav ul li a.active {
         color:blue;
         text-decoration: overline;       
     }
-    .header{
+    /* static-text */
+        .static-text{
+            font-size: 34px;
+            font-weight: 600;
+            min-width: 280px;
+        }
+        .static-text span {
+            position: relative;
+        }
+       .static-text span::before {
+        content: "developer";
+        color: blue;
+        animation: words 20s  infinite;
+    }
+        .static-text span::after {
+            content: "";
+            color: blue;
+            position: absolute;
+           width: calc(100% + 3px);
+           height: 100%;
+           background-color: #fff;
+           border-left: 3px solid blue;
+           right: -8px;
+           animation: cursor .8s infinite , type 20s steps(14) infinite;
+        }
+        @keyframes cursor {
+           to{
+             border-left: 3px solid blue;
+           }
+        }
+        @keyframes words {
+            0%,20% {
+                content: "developer";
+            }
+            50%,70% {
+                content: "programmer";
+            }
+            80%,100% {
+                content: "designer";
+            }
+        }
+        @keyframes type {
+          10%,15%,30%,35%,40%,50%,55%,70%,75%,80%,90%,95%,100% {
+            width: 0;
+          }
+            20%,25%,40%,45%,50%,60%,65%,80%,85%,90%,100% {
+                width: calc(100% + 3px);
+            }
+
+        }
+    /* .header{
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        background-color: #f8f8f8;
+     border-bottom: 2px solid #000000;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         position: sticky;
         top: 2px; 
-    }
+    } */
     section{
          margin-top: 100px;
         display: flex;

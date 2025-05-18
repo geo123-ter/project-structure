@@ -1,0 +1,27 @@
+
+    body {
+      font-family: cursive;
+      background: #f9f9f9;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .card {
+      background: rgb(54, 5, 234);
+      padding: 30px;
+        color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: rgb(59, 5, 235);
+      color: white;
+    }
