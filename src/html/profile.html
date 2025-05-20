@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/profile.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   
+</head>
+<body>
+     <div class="container">
+         <nav>
+            <img src="/assets/logo.png" alt="">
+            <ul>
+                <li><a href="./home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="../pages/more.html"><i class="fa-regular fa-address-card"></i>About Us</a></li>
+                <li><a href="./contact.html"><i class="fa-solid fa-phone"></i>Contact</a></li>
+                <li><a href="./port.html"><i class="fa-solid fa-briefcase"></i>portifoliol</a></li>
+                <li><a href="../html/blog2.html"><i class="fa-solid fa-blog"></i>blogs</a></li>
+                <li><a href="profile.html"><i class="fa-regular fa-circle-user"></i>Profile</a></li>
+                <li><a href="comment.html"><i class="fa-regular fa-comments"></i>Comment</a></li>
+            </ul>
+    <div class="logout">
+            <a href="logout.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>LogOut</a>
+        </div>
+        </nav>
+    </div>
+    
+  <div class="profile-box">
+  <h2>Edit Your Profile</h2>
+  <form id="profileForm">
+    <label>
+      Name:
+      <input type="text" id="profileName" placeholder="Enter your name" />
+    </label>
+    
+    <label>
+      Status:
+      <select id="profileStatus">
+        <option value="online">Online</option>
+        <option value="busy">Busy</option>
+        <option value="away">Away</option>
+      </select>
+    </label>
+    
+    <label>
+      Profile Picture:
+      <input type="file" id="profilePicture" accept="image/*" />
+    </label>
+
+    <button type="submit">Save Profile</button>
+  </form>
+
+  <div class="profile-display">
+   <img id="displayAvatar" src="default-avatar.png" alt="Profile Picture" />
+    <p id="displayStatus">Status: Online</p>
+    <h3 id="displayName">Your Name</h3>
+
+  </div>
+   
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('profileName').value;
+  const status = document.getElementById('profileStatus').value;
+  const file = document.getElementById('profilePicture').files[0];
+
+  if (name) {
+    localStorage.setItem('profileName', name);
+    document.getElementById('displayName').textContent = name;
+  }
+
+  localStorage.setItem('profileStatus', status);
+  document.getElementById('displayStatus').textContent = "Status: " + capitalize(status);
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const dataURL = reader.result;
+      localStorage.setItem('profileAvatar', dataURL);
+      document.getElementById('displayAvatar').src = dataURL;
+
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+window.onload = function () {
+  const savedName = localStorage.getItem('profileName');
+  const savedStatus = localStorage.getItem('profileStatus');
+  const savedAvatar = localStorage.getItem('profileAvatar');
+
+  if (savedName) document.getElementById('displayName').textContent = savedName;
+  if (savedStatus) document.getElementById('displayStatus').textContent = "Status: " + capitalize(savedStatus);
+  if (savedAvatar) document.getElementById('displayAvatar').src = savedAvatar;
+
+  // Optional: pre-fill form values
+  if (savedName) document.getElementById('profileName').value = savedName;
+  if (savedStatus) document.getElementById('profileStatus').value = savedStatus;
+};
+
+    </script>
+
+</body>
+</html>

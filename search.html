@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Bar Example</title>
+  <style>
+    body { 
+        font-family: cursive; 
+        padding: 20px; 
+    }
+    #searchInput {
+         padding: 8px;
+          width: 100%; 
+          max-width: 300px;
+           margin-bottom: 20px;
+           display: flex;
+           justify-content: center;
+              align-items: center;
+         }
+    ul {
+         list-style: none;
+          padding: 0; 
+        }
+    li { padding: 10px; 
+        background: #f2f2f2;
+         margin-bottom: 8px; 
+         border-radius: 6px; 
+        }
+    li a {
+         text-decoration: none; 
+         color: #333; 
+        }
+        #contentList{
+            background-color: #dfdada;
+        }
+    #noResults {
+         display: none; 
+         color: red; 
+        }
+
+  </style>
+</head>
+<body>
+
+  <h2>Search Developer To see  his details</h2>
+  <input type="text" id="searchInput" placeholder="Type to search...">
+
+  <ul id="contentList">
+    <li><a href="./src/pages/pages pa.html">Abijuru Pacifique</a></li>
+    <li><a href="./src/pages/pages re.html">Irakoze Reponse Rene</a></li>
+    <li><a href="./src/pages/pages ji.html">Kirangirire jimmy</a></li>
+    <li><a href="./src/pages/pages es.html">Irasubiza Esther </a></li>
+  
+  </ul>
+  <p id="noResults" >No results found.</p>
+
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const listItems = document.querySelectorAll("#contentList li");
+    const noResults = document.getElementById("noResults");
+
+      // Initially hide all items
+listItems.forEach(item => {
+  item.style.display = "none";
+});
+
+    searchInput.addEventListener("keyup", function () {
+  const value = this.value.toLowerCase();
+
+  listItems.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    // Show if it matches, otherwise hide
+    item.style.display = value && text.includes(value) ? "list-item" : "none";
+  });
+  //when no results are found
+    const visibleItems = Array.from(listItems).some(item => item.style.display === "list-item");
+    noResults.style.display = visibleItems ? "none" : "block";
+});
+
+  </script>
+
+</body>
+</html>

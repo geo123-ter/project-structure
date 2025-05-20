@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog page</title>
-    <link rel="stylesheet" href="/src/css/blogs.css">
+    <link rel="stylesheet" href="../css/blogs.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -21,6 +21,7 @@
                     <li><a href="../html/contact.html">Contact</a></li>
                     <li><a href="../html/port.html">portifoliol</a></li>
                     <li><a href="../html/blog2.html">blogs</a></li>
+                   
                     
 
                 </ul>
@@ -28,7 +29,7 @@
        
         </div>
         <div class="upload">
-            <a href="/project-structure/src/blogs/sign.html"><i class='bx bx-plus'></i>upload</a>
+            <a href="/project-structure/upload/upload.html"><i class='bx bx-plus'></i>upload</a>
            </div>
 
         <div class="row">
@@ -89,7 +90,7 @@
           
                         </div>
                         <div class="card">
-                            <img src="/project-structure/assets/log.png" alt="buy">
+                            <img src="/project-structure/assets/board.jpeg" alt="buy">
                            <h4>
                             Stay updated with the latest trends in technology and coding. 
                             Our blog covers a wide range of topics, from programming languages to industry news.                                    
@@ -124,36 +125,43 @@
 
 <button id="deleteImage">Delete Uploaded Image</button>
 
- <div class="footer-container">
-    <div class="footer-cont">
-   <p class="try"> follow us on our social media </p>
-
-    <div class="social-link">
-        <i class='bx bxl-whatsapp-square'></i>
-        <i class='bx bxl-facebook-circle' ></i>
-        <i class='bx bxl-twitter'></i>
-        <i class='bx bxl-instagram-alt' ></i>
-    </div>    
-   
-<div class="contact">
-    <h2>Contact us</h2>
-    <p><i class='bx bxs-phone'></i>+250721432343</p>
-    <p><i class='bx bx-current-location'></i>12 Nr 45 Karuruma</p>
-    <p><i class='bx bxs-envelope'></i>Mail:Geovanipacis@gmail.com</p>
-</div>
-<div class="contact">
-    <h2>Service</h2>
-    <p><i class='bx bxl-sketch'></i></i>Web Development</p>
-    <p><i class='bx bxs-palette'></i></i>Web Design</p>
-    <p><i class='bx bxs-phone'></i>Mobile Development</p>
-    <p><i class='bx bxl-microsoft'></i></i>Software Development</p>
-</div>
-
-
- </div>
-
+ 
 
 </div>
+
+    <footer class="footer">
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>GRJE</h2>
+      <p>Front-End Developer | Building clean and modern websites.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="./project-structure/src/html/home.html">Home</a></li>
+        <li><a href="/project-structure/src/pages/more.html">About Me</a></li>
+        <li><a href="/project-structure/src/html/port.html">Portfolio</a></li>
+        <li><a href="/project-structure/src/html/contact4.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+       <a href="#">Facebook<i class="fa-brands fa-facebook"></i></a>
+       <a href="#">twitter<i class="fa-brands fa-twitter"></i></a>
+       <a href="#">whatsapp<i class="fa-brands fa-whatsapp"></i></a>
+       <a href="#">Instagram<i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 GRJE. All rights reserved.
+  </div>
+</footer>
 
 
 <script>
@@ -164,10 +172,8 @@
         
         alert("Uploaded image has been deleted.");
     });
-</script>
 
-
-  <script>
+  
     // Load image from localStorage
     const imageData = localStorage.getItem("uploadedImage");
 

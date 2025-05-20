@@ -43,8 +43,8 @@ function registerFunction() {
                     alert('Please enter a valid email.');
                     valid = false;
                 }
-                if (pass.length < 6) {
-                    alert('Password must be at least 6 characters.');
+                if (pass.length < 7) {
+                    alert('Password must be at least 7 characters.');
                     valid = false;
                 }
                 if (!valid) e.preventDefault();
@@ -68,8 +68,8 @@ function registerFunction() {
                     alert('Please enter a valid email.');
                     valid = false;
                 }
-                if (pass.length < 6) {
-                    alert('Password must be at least 6 characters.');
+                if (pass.length < 7) {
+                    alert(' &#x1F60A; Password must be at least 7 characters.');
                     valid = false;
                 }
                 if (pass !== confirmPass) {
@@ -91,7 +91,7 @@ function registerFunction() {
         document.querySelector('.login-form').addEventListener('submit', function(e) {
             const email = document.getElementById('log-email').value.trim();
             const pass = document.getElementById('log-pass').value;
-            if (email && pass.length >= 6) {
+            if (email && pass.length >= 7) {
                 localStorage.setItem('Email', email);
                 localStorage.setItem('Password', pass);
             }
@@ -108,5 +108,6 @@ function registerFunction() {
                 localStorage.setItem('registerSecondName', secondName);
                 localStorage.setItem('registerEmail', email);
                 localStorage.setItem('registerPassword', pass);
+                localStorage.setItem('registerAgree', document.getElementById('agree').checked);
             }
         });

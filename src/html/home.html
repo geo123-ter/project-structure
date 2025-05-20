@@ -6,23 +6,31 @@
     
     <title>Portiforial</title>
     <link rel="stylesheet" href="../css/home.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
-    <img src="/" alt="logo">
+   <div id="loader">
+  <div class="spinner"></div>
+   <div>
+     <h3>Welcome to Our website</h3>
+   </div>
+</div>
+
+   
     <div class="header">
-        <div class="image">
-            
-        </div>
+       <img src="/project-structure/assets/logo.png" alt="logo">
         <nav>
             <ul>
-                <li><a href="/project-structure/src/html/home.html">Home</a></li>
-                <li><a href="/project-structure/src/pages/more.html">About Us</a></li>
-                <li><a href="/src/html/contact.html">Contact</a></li>
-                <li><a href="/project-structure/src/html/port.html">Portiforial</a></li>
-                <li><a href="/project-structure/src/blogs/blogs.html">blogs</a></li>
+                <li><a href="/src/html/home.html">Home</a></li>
+                <li><a href="../pages/more.html">About Us</a></li>
+                <li><a href="../html/contact4.html">Contact</a></li>
+                <li><a href="../html/port.html">Portiforial</a></li>
+                <li><a href="../blogs/blogs.html">blogs</a></li>
                 <li><a href="login.html">Login</a></li>
+                
             </ul>
 
         </nav>
@@ -31,65 +39,138 @@
     <section>
     
      <div class="container">
-        <div class="static-text">
-We are <span></span>
+       
+        <div class="typewriter-container">
+  <h1>Hi, We Deal with </h1>
+  <h2><span class="typed-text"></span><span class="cursor">|</span></h2>
         </div>
-      
         <div class="imag">
             <img src="/project-structure/assets/images (6).png" alt="image">
         </div>
     </div>
+    <div class="audio-greeting">
+  <button onclick="document.getElementById('voice').play()">🔊 Play Greeting</button>
+<audio id="voice" src="/project-structure/assets/audio/record.mp3"></audio>
+</div>
     </section>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Hi, We are <span class="highlight">GRJE</span></h1>
+    <p class="tagline">Front-End Developer | Crafting Clean & Interactive Web Experiences</p>
+    <p class="description">
+      We specialize in building responsive websites that combine sleek design with smooth user experience. 
+      Whether it's a landing page, portfolio, or full-scale web app — We bring your ideas to life with HTML, CSS, and modern front-end tools.
+    </p>
+  </div>
+</section>
+
+
+    <footer class="footer">
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>GRJE</h2>
+      <p>Front-End Developer | Building clean and modern websites.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="./project-structure/src/html/home.html">Home</a></li>
+        <li><a href="/project-structure/src/pages/more.html">About Me</a></li>
+        <li><a href="/project-structure/src/html/port.html">Portfolio</a></li>
+        <li><a href="/project-structure/src/html/contact4.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+       <a href="#">Facebook<i class="fa-brands fa-facebook"></i></a>
+       <a href="#">twitter<i class="fa-brands fa-twitter"></i></a>
+       <a href="#">whatsapp<i class="fa-brands fa-whatsapp"></i></a>
+       <a href="#">Instagram<i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 GRJE. All rights reserved.
+  </div>
+</footer>
+
+
+
+</div>
+
+
+   <script >
+   window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = 0;
+    loader.style.transition = "opacity 0.5s ease";
+    setTimeout(() => {
+      loader.style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 500);
+  }, 2000); // Delay before fade
+});
+
  
-<div class="social-link">
-    <i class='bx bxl-whatsapp-square'></i>
-    <i class='bx bxl-facebook-circle' ></i>
-    <i class='bx bxl-twitter'></i>
-    <i class='bx bxl-instagram-alt' ></i>
-</div>
+// audio play
+    // Check if the user has visited before
+    const hasPlayed = localStorage.getItem('hasPlayedGreeting');
 
-    <div class="expr">
-        <p class="rr">We have 9 month of experience in the field of web development and design. We have worked 
-            with various clients and have a proven track record of delivering high-quality work.</p>  <br><br><br>     
-              
-            <div class="iu">
-                <p class="rr">We are proficient in HTML, CSS, JavaScript, and various frameworks such as React, Angular, and Vue.js.
-                    We also have experience with backend technologies such as Node.js, Express, and MongoDB.</p>
-            </div>              
-                 
+    if (!hasPlayed) {
+      const audio = document.getElementById('voiceGreeting');
 
+      // Play after small delay (optional, for page load comfort)
+      setTimeout(() => {
+        audio.play();
+        // Mark as played
+        localStorage.setItem('hasPlayedGreeting', 'true');
+      }, 1000); // 1 second delay
+    }
+  const phrases = [
+    "Front-End Developer",
+    "UI/UX Design",
+    "Web Design Specialist",
+    "Creative Coder"
+  ];
 
-</div> 
- <div class="footer-container">
-    <div class="footer-cont">
-   <p class="try"> follow us on our social media </p>
+  const typedText = document.querySelector(".typed-text");
+  let currentPhraseIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const delayBetweenPhrases = 1500;
 
-    <div class="social-link">
-        <i class='bx bxl-whatsapp-square'></i>
-        <i class='bx bxl-facebook-circle' ></i>
-        <i class='bx bxl-twitter'></i>
-        <i class='bx bxl-instagram-alt' ></i>
-    </div>    
-   
-<div class="contact">
-    <h2>Contact us</h2>
-    <p><i class='bx bxs-phone'></i>+250721432343</p>
-    <p><i class='bx bx-current-location'></i>12 Nr 45 Karuruma</p>
-    <p><i class='bx bxs-envelope'></i>Mail:Geovanipacis@gmail.com</p>
-</div>
-<div class="contact">
-    <h2>Service</h2>
-    <p><i class='bx bxl-sketch'></i></i>Web Development</p>
-    <p><i class='bx bxs-palette'></i></i>Web Design</p>
-    <p><i class='bx bxs-phone'></i>Mobile Development</p>
-    <p><i class='bx bxl-microsoft'></i></i>Software Development</p>
-</div>
+  function type() {
+    const currentPhrase = phrases[currentPhraseIndex];
+    if (isDeleting) {
+      typedText.textContent = currentPhrase.substring(0, currentCharIndex--);
+    } else {
+      typedText.textContent = currentPhrase.substring(0, currentCharIndex++);
+    }
 
+    if (!isDeleting && currentCharIndex === currentPhrase.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetweenPhrases);
+    } else if (isDeleting && currentCharIndex === 0) {
+      isDeleting = false;
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+    }
+  }
 
- </div>
-
-
-</div>
+  document.addEventListener("DOMContentLoaded", () => {
+    type();
+  });
+  </script>
 </body>
 </html>
 
