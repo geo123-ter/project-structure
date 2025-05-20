@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/project-structure/src/css/sign.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+ <div class="form">
+<div class="text-center">
+<h5><span> Login In </span> <span>Sign Up</span></h5>
+<input type="checkbox" class="checkbox" id="reg-log" title="Toggle between Login and Sign Up">
+<label for="reg-log"></label>
+<div class="card-3d-wrap">
+<div class="card-3d-wrapper">
+<div class="card-front">
+<div class="center-wrap">
+<h4 class="heading">Log In</h4>
+ <div class="form-group">        
+<input type="email" class="form-style" placeholder=" User Email" required>
+<i class='bx bx-envelope'></i>
+</div>
+<div class="form-group">
+<input type="password" class="form-style" placeholder=" User Password" required>
+<i class='bx bxs-lock'></i>
+</div>
+<p class="text-center"><a href="#" class="link">Forgot Password</a></p>
+
+<a href="/project-structure/upload/upload.html" class="btn">Login</a>
+<p class="text-center"><a href="./" class="link">i dont have account ?</a></p>
+</div>
+</div>
+   
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const loginForm = document.querySelector('.card-front');
+                const signUpForm = document.querySelector('.card-back');
+
+                // Login validation
+                loginForm.querySelector('.btn').addEventListener('click', (e) => {
+                    const email = loginForm.querySelector('input[type="email"]').value;
+                    const password = loginForm.querySelector('input[type="password"]').value;
+
+                    if (!email || !password) {
+                        e.preventDefault();
+                        alert('Please fill in all login fields.');
+                    } else if (!validateEmail(email)) {
+                        e.preventDefault();
+                        alert('Please enter a valid email address.');
+                    }
+                });
+
+                // Sign-up validation
+                signUpForm.querySelector('.bt').addEventListener('click', (e) => {
+                    const firstName = signUpForm.querySelector('input[placeholder=" first name"]').value;
+                    const email = signUpForm.querySelector('input[placeholder=" User Email"]').value;
+                    const password = signUpForm.querySelector('input[placeholder=" Enter Password"]').value;
+                    const confirmPassword = signUpForm.querySelector('input[placeholder=" Confirm password"]').value;
+
+                    if (!firstName || !email || !password || !confirmPassword) {
+                        e.preventDefault();
+                        alert('Please fill in all sign-up fields.');
+                    } else if (!validateEmail(email)) {
+                        e.preventDefault();
+                        alert('Please enter a valid email address.');
+                    } else if (password !== confirmPassword) {
+                        e.preventDefault();
+                        alert('Passwords do not match.');
+                    }
+                });
+
+                // Email validation function
+                function validateEmail(email) {
+                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(email);
+                }
+});
+</script>
+</body>
+</html>

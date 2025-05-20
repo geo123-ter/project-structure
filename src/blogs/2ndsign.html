@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link rel="stylesheet" href="/project-structure/src/css/2ndsign.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+        <img src="/project-structure/assets/logo.png" alt="logo" class="logo" width="100px" height="100px"> 
+    <div class="header">
+     
+        <nav>
+            <ul>
+                <li><a href="/src/home.html">Home</a></li>
+                <li><a href="../pages/more.html">About Us</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
+                <li><a href="/project-structure/src/html/">Portiforial</a></li>
+                <li><a href="./blogs.html">blogs</a></li>
+            </ul>
+
+        </nav>
+       
+    </div>
+
+<div class="container">
+<div class="center-wrap">
+<h4 class="heading">Sign Up</h4>
+<div class="form-group">        
+<input type="text" class="form-style" placeholder=" first name" required>                            
+</div>
+<div class="form-group">        
+<input type="text" class="form-style" placeholder=" User Email" required>
+                            
+</div>
+<div class="form-group">
+<input type="password" class="form-style" placeholder=" Enter Password" required>
+                              
+</div>
+<div class="form-group">
+        <input type="password" class="form-style" placeholder=" Comfrim password" required>
+                              
+                             </div> 
+
+                  <button class="bt">Sign Up</button>
+                    </div>
+                </div> 
+               <script>
+                document.querySelector('.bt').addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    const firstName = document.querySelector('input[placeholder=" first name"]').value.trim();
+                    const userEmail = document.querySelector('input[placeholder=" User Email"]').value.trim();
+                    const password = document.querySelector('input[placeholder=" Enter Password"]').value.trim();
+                    const confirmPassword = document.querySelector('input[placeholder=" Comfrim password"]').value.trim();
+
+                    if (!firstName || !userEmail || !password || !confirmPassword) {
+                        alert('All fields are required!');
+                        return;
+                    }
+
+                    if (password !== confirmPassword) {
+                        alert('Passwords do not match!');
+                        return;
+                    }
+
+                    const userData = {
+                        firstName: firstName,
+                        userEmail: userEmail,
+                        password: password
+                    };
+                    location.href = '/upload/upload.html';
+                });
+                localStorage.setItem('userData', JSON.stringify(userData));
+                
+                const savedUserData = JSON.parse(localStorage.getItem('userData'));
+                console.log('Saved User Data:', savedUserData);
+               </script>
+
+</body>
+
+</html>

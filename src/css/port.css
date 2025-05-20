@@ -1,0 +1,138 @@
+@import url("home.css");
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: cursive;
+    color: blue;
+    height: 100vh;
+    
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+.content1{
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: auto;
+}
+.content1:hover {
+   transform: scale(1.05);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2575fc;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.subscribe {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;        
+}
+
+.subscribe input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    /* border: none; */
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    width: 400px;
+}
+
+.subscribe button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #2575fc;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe button:hover {
+    background-color: #27456e;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    color: #0c22ec;
+    transition: color 0.3s ease;
+    margin-top: 90px;
+}
+
+.social-media a:hover {
+    color: #1a5bb8;
+}
+
+@media (max-width: 768px) {
+    .content1 {
+        padding: 15px;
+        margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .subscribe input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscribe button {
+        width: 100%;
+    }
+
+    .social-media a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .content1 {
+        padding: 10px;
+    }
+
+    .social-media a {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,12 @@
+/* style.css */
+#uploadBtn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#fileName {
+    margin-left: 10px;
+}

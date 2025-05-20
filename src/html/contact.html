@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="/src/css/contact.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/src/html/home.html">Home</a></li>
+                    <li><a href="/src/pages/more.html">About Us</a></li>
+                    <li><a href="/src/html/contact.html">Contact</a></li>
+                    <li><a href="/src/html/port.html">Portiforial</a></li>
+                    <li><a href="/src/blogs/blogs.html">Blogs</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container2">
+             <form action="https://api.web3forms.com/submit" method="POST">
+
+    
+    <input type="hidden" name="access_key" value="27379a41-d4a7-4fa1-a27a-e14a303d861a">
+            <div class="form-input">
+                <input type="text" placeholder="Name" required>
+                <i class='bx bx-user'></i>
+                </div>  
+               <div class="form-input">
+                <input type="email" placeholder="Email" required>
+                <i class='bx bx-envelope'></i>
+                </div>
+                <div class="form-input">
+                <input type="tel" placeholder="phone number" required>
+                <i class='bx bxs-phone'></i>
+                </div>
+                <div class="form-input">
+                <textarea placeholder="Message" required></textarea>
+                </div>
+               
+                <label for="checkbox"> <input type="checkbox" id="checkbox" required>I agree to the terms and conditions</label>
+                <button type="submit" class="hh" onclick="window.location.href='last.html';"> Send <i class='bx bxs-send'></i></button>
+
+                 <!-- Optional settings -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Chat Message!">
+            </form>
+
+            </div>
+        </div>
+               <div class="footer">
+            <div class="footer-container">
+                <div class="footer-cont">
+               <p class="try"> follow us on our social media </p>
+            
+                <div class="social-link">
+                    <i class='bx bxl-whatsapp-square'></i>
+                    <i class='bx bxl-facebook-circle' ></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-instagram-alt' ></i>
+                </div>    
+               
+            <div class="contact">
+                <h2>Contact us</h2>
+                <p><i class='bx bxs-phone'></i>+250721432343</p>
+                <p><i class='bx bx-current-location'></i>12 Nr 45 Karuruma</p>
+                <p><i class='bx bxs-envelope'></i>Mail:Geovanipacis@gmail.com</p>
+            </div>
+            <div class="contact2">
+                <h2>Service</h2>
+                <p><i class='bx bxl-sketch'></i></i>Web Development</p>
+                <p><i class='bx bxs-palette'></i></i>Web Design</p>
+           </div>
+            
+            
+             </div>
+            
+            
+            </div>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // Get form fields
+            const name = this.querySelector('input[placeholder="Name"]');
+            const email = this.querySelector('input[placeholder="Email"]');
+            const phone = this.querySelector('input[placeholder="phone number"]');
+            const message = this.querySelector('textarea[placeholder="Message"]');
+            const checkbox = this.querySelector('#checkbox');
+
+            // Simple validation
+            let valid = true;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^\+?\d{7,15}$/;
+
+            if (!name.value.trim()) valid = false;
+            if (!emailPattern.test(email.value.trim())) valid = false;
+            if (!phonePattern.test(phone.value.trim())) valid = false;
+            if (!message.value.trim()) valid = false;
+            if (!checkbox.checked) valid = false;
+
+            if (!valid) {
+                alert('Please fill all fields correctly and agree to the terms.');
+                e.preventDefault();
+                return false;
+            }
+
+        
+            localStorage.setItem('name', name.value);
+            localStorage.setItem('email', email.value);
+            localStorage.setItem('phone', phone.value);
+            localStorage.setItem('message', message.value);
+
+        
+            this.reset();
+        });
+    </script>
+</body>
+</html>

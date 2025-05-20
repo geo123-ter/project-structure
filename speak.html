@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+   } 
+    .input-ih {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #dfd6d6;
+        padding: 80px;
+        border-radius: 10px;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+    }
+    .input-ih h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .input-ih input {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .input-ih button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .input-ih button:hover {
+        background-color: #0056b3;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-ih">
+            <h1>Speak</h1>
+            <input type="text" id="text-input" placeholder="Enter text here">
+            <button id="speak-button">Speak</button>
+        </div>
+    </div>
+        
+    <script>
+        document.getElementById('speak-button').addEventListener('click', function() {
+            const text = document.getElementById('text-input').value;
+            if (text.trim() !== "") {
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+      store = window.localStorage;
+        const textInput = document.getElementById('text-input');
+        const speakButton = document.getElementById('speak-button');
+        const savedText = store.getItem('savedText');
+        if (savedText) {
+            textInput.value = savedText;
+        }
+        textInput.addEventListener('input', function() {
+            store.setItem('savedText', textInput.value);
+        });
+     
+    </script>
+</body>
+</html>
