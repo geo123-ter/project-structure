@@ -73,7 +73,7 @@ nav ul li a.active {
             position: relative;
         }
        .static-text span::before {
-        content: "developer";
+        content: "";
         color: blue;
         animation: words 20s  infinite;
     }

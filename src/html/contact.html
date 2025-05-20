@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="/src/html/home.html">Home</a></li>
                     <li><a href="/src/pages/more.html">About Us</a></li>
-                    <li><a href="/project-structure/src/html/contact.html">Contact</a></li>
+                    <li><a href="/src/html/contact.html">Contact</a></li>
                     <li><a href="/src/html/port.html">Portiforial</a></li>
                     <li><a href="/src/blogs/blogs.html">Blogs</a></li>
                     <li><a href="login.html">Login</a></li>
@@ -26,6 +26,10 @@
             </nav>
         </div>
         <div class="container2">
+             <form action="https://api.web3forms.com/submit" method="POST">
+
+    
+    <input type="hidden" name="access_key" value="27379a41-d4a7-4fa1-a27a-e14a303d861a">
             <div class="form-input">
                 <input type="text" placeholder="Name" required>
                 <i class='bx bx-user'></i>
@@ -43,7 +47,12 @@
                 </div>
                
                 <label for="checkbox"> <input type="checkbox" id="checkbox" required>I agree to the terms and conditions</label>
-                <button type="submit" onclick="window.location.href='last.html';"> Send <i class='bx bxs-send'></i></button>
+                <button type="submit" class="hh" onclick="window.location.href='last.html';"> Send <i class='bx bxs-send'></i></button>
+
+                 <!-- Optional settings -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Chat Message!">
+            </form>
 
             </div>
         </div>
@@ -78,31 +87,39 @@
             </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const formInputs = document.querySelectorAll(".form-input input, .form-input textarea");
-            const submitButton = document.querySelector("button[type='submit']");
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // Get form fields
+            const name = this.querySelector('input[placeholder="Name"]');
+            const email = this.querySelector('input[placeholder="Email"]');
+            const phone = this.querySelector('input[placeholder="phone number"]');
+            const message = this.querySelector('textarea[placeholder="Message"]');
+            const checkbox = this.querySelector('#checkbox');
 
-            submitButton.addEventListener("click", function (event) {
-                let isValid = true;
+            // Simple validation
+            let valid = true;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^\+?\d{7,15}$/;
 
-                formInputs.forEach(input => {
-                    if (!input.value.trim()) {
-                        isValid = false;
-                        input.style.border = "2px solid red";
-                    } else if (input.type === "email" && !/\S+@\S+\.\S+/.test(input.value)) {
-                    } else {
-                        input.style.border = "1px solid #ccc";
-                    }
-                });
+            if (!name.value.trim()) valid = false;
+            if (!emailPattern.test(email.value.trim())) valid = false;
+            if (!phonePattern.test(phone.value.trim())) valid = false;
+            if (!message.value.trim()) valid = false;
+            if (!checkbox.checked) valid = false;
 
-                if (!isValid) {
-                    event.preventDefault();
-                    alert("Please fill out all fields before submitting.");
-                }
-                if (isValid) {
-                    alert("Your message has been sent successfully!");
-                }
-            });
+            if (!valid) {
+                alert('Please fill all fields correctly and agree to the terms.');
+                e.preventDefault();
+                return false;
+            }
+
+        
+            localStorage.setItem('name', name.value);
+            localStorage.setItem('email', email.value);
+            localStorage.setItem('phone', phone.value);
+            localStorage.setItem('message', message.value);
+
+        
+            this.reset();
         });
     </script>
 </body>

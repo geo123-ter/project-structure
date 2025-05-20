@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logs</title>
+    <!-- <link rel="stylesheet" href="logs.css"> -->
+     <style>
+body{
+    background:black ;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    height: 100vh;
+}
+.mains{
+display: flex;
+direction: column;
+position: absolute;
+}
+@keyframes flecker{
+    0%{
+        transform: rotate(-1deg);
+    }
+    20%{
+        transform: rotate(1deg);
+    }
+    40%{
+        transform: rotate(-1deg);
+    }
+    60%{
+        transform: rotate(1deg) scale(1.4);
+    }
+    80%{
+        transform: rotate(-1deg) scaleY(0.92);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
+}
+.container{
+    width: 60%;
+    height: 60%;
+    transform-origin: center bottom;
+    animation: flecker 3ms 200ms case in infinite alternate;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.flame{
+    position: absolute;
+    bottom: 0;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    transform: rotate(-42deg) scale(1.5 1.5);
+    }
+    .red{
+        left: 5px;
+        height: 50px;
+        width: 50px;
+        background: orangered;
+        box-shadow: 0px 0px 5px 4px orangered;
+    }
+    .orange{
+        left: 10px;
+        height: 40px;
+        width: 40px;
+        background: orange;
+        box-shadow: 0px 0px 9px 4px orange;
+    }
+    .yellow{
+        left: 15px;
+        height: 30px;
+        width: 30px;
+        background: gold;
+        box-shadow: 0px 0px 9px 4px gold;
+    }
+    .white{
+        left: 15px;
+        height: 30px;
+        width: 30px;
+        background: white;
+        box-shadow: 0px 0px 9px 4px white;
+    }
+    .circle{
+        left:50%;
+        position: absolute;
+        bottom: 50%;
+        border-radius: 50%;
+    
+    }
+    .blue{
+        height: 10px;
+        width: 10px;
+        left: 25px;
+        background:slateblue;
+        box-shadow: 0px 0px 15px 10px slateblue;
+    }
+    .black{
+        height: 40px;
+        width: 40px;
+        left: 10px;
+        bottom: -60px;
+        background: black;
+        box-shadow: 0px 0px 15px 10px black;
+    }
+    .logs{
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+    }
+    .logs,.one,.logs,.three{
+width: 90px;
+    }
+    .logs,.one,.log,.logs,.three,.log{
+        position: relative;
+        height: 40px;
+        background: #725442;
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 11% 100%);
+        transform-origin: 0 0;
+        transform: skewY(-10deg);
+        margin-bottom: -1px;
+        
+    }
+    .logs,.one::after,.logs,.three::after{
+        content: '';
+        display: block;
+        position: relative;
+        width: 39px;
+        height: 40px;
+        border-radius: 50px;
+        background: #91725c;
+        transform: translate(-50%, -100%);
+        box-sizing: border-box;
+        border:2px solid #725442;
+        margin-top: 1px;
+    }
+    .logs,.three{
+        transform: scaleX(-1);
+        margin-left: -40px;
+    }
+    .logs,.two{
+        width: 40px;
+        transform: translateX(-50%);
+    }
+    .logs,.two,.log{
+        position: relative;
+        height: 40px;
+        background: #725442;
+        clip-path: polygon(30% 0, 70% 0, 100% 100%, 0% 100%);
+        margin-bottom: -17px;
+    }
+    .logs,.two::after{
+        content: '';
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 35px;
+        border-radius: 50px;
+        background: #91725c;
+        transform: translate(-50%, -100%);
+        box-sizing: border-box;
+        border:2px solid #725442;
+    }
+     </style>
+</head>
+<body>
+
+<div class="mains">
+    <div class="container">
+        <div class="red flame"></div>
+        <div class="orange flame"></div>
+        <div class="white flame"></div>
+        <div class="blue circle"></div>
+        <div class="black circle"></div>
+        </div>
+        <div class="logs">
+            <div class="one">
+
+            </div>
+        </div>
+        
+        <div class="two">
+            <div class="log">
+
+            </div>
+        <div class="three">
+            <div class="log">
+
+            </div>
+            </div>
+            </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .comment-section {
+  background: #e9e3e3;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#commentForm input,
+#commentForm textarea {
+  width: 50%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+
+#commentForm button {
+  padding: 10px 20px;
+  background: #4a90e2;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#commentList{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+    </style>
+</head>
+<body>
+    <div class="comment-section">
+  <h2>Leave a Comment</h2>
+  <form id="commentForm">
+    <input type="text" id="commentName" placeholder="Your name" required />
+    <textarea id="commentText" placeholder="Write your comment..." required></textarea>
+    <button type="submit">Post Comment</button>
+  </form>
+
+  <div id="commentList"></div>
+</div>
+
+<script>
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+function saveComments() {
+  localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+function renderComments() {
+  const commentList = document.getElementById('commentList');
+  commentList.innerHTML = '';
+
+  comments.forEach((comment, index) => {
+    const div = document.createElement('div');
+    div.className = 'comment';
+    
+    const name = document.createElement('h4');
+    name.textContent = comment.name;
+
+    const text = document.createElement('p');
+    text.textContent = comment.text;
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Delete';
+    btn.onclick = () => {
+      comments.splice(index, 1);
+      saveComments();
+      renderComments();
+    };
+
+    div.appendChild(name);
+    div.appendChild(text);
+    div.appendChild(btn);
+    commentList.appendChild(div);
+  });
+}
+
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('commentName').value.trim();
+  const text = document.getElementById('commentText').value.trim();
+
+  if (name && text) {
+    comments.push({ name, text });
+    saveComments();
+    renderComments();
+    this.reset();
+  }
+});
+
+window.onload = renderComments;
+
+// Store to localStorage
+window.addEventListener('beforeunload', saveComments);
+
+</script>
+</body>
+</html>
