@@ -87,6 +87,14 @@ a:hover {
     cursor: pointer;
 
 }
+.main-top span {
+ font-size:2rem;
+    margin-left: 20px;
+    color: #1604de;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
 .main-skills{
  display: flex;
  margin-top: 20px;

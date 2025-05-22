@@ -44,7 +44,7 @@ function registerFunction() {
                     valid = false;
                 }
                 if (pass.length < 7) {
-                    alert('Password must be at least 6 characters.');
+                    alert('Password must be at least 7 characters.');
                     valid = false;
                 }
                 if (!valid) e.preventDefault();
@@ -68,8 +68,8 @@ function registerFunction() {
                     alert('Please enter a valid email.');
                     valid = false;
                 }
-                if (pass.length < 6) {
-                    alert('Password must be at least 6 characters.');
+                if (pass.length < 7) {
+                    alert(' &#x1F60A; Password must be at least 7 characters.');
                     valid = false;
                 }
                 if (pass !== confirmPass) {
@@ -108,5 +108,6 @@ function registerFunction() {
                 localStorage.setItem('registerSecondName', secondName);
                 localStorage.setItem('registerEmail', email);
                 localStorage.setItem('registerPassword', pass);
+                localStorage.setItem('registerAgree', document.getElementById('agree').checked);
             }
         });
